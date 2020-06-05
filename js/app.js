@@ -12,7 +12,8 @@ $.ajax('/data/page-1.json').then(data => {
     console.log('console2');
     div.find('img').attr('src', uni_list[0][i].image_url);
     console.log('console3');
-
+    // div.appendTo('div');
+    console.log('console3.5');
     i++;
   });
   console.log('console4');
