@@ -31,8 +31,8 @@ $.ajax('/data/page-1.json').then(data => {
       console.log('type2');
       let div = $('.img');
       div.find('img').attr('src',uni_list[0][0].image_url);
-      //let $$img = $('img');
-      //let img = $$img.clone();
+      let $$img = $('img');
+      let img = $$img.clone();
       //img.attr('src', uni_list.image_url);
       //console.log('hey bro!');
       $('.img').append(`<div>${div}</div>`);
