@@ -1,0 +1,17 @@
+main{
+    margin: auto;
+    width: 90%;
+    background-color: rgb(208, 208, 186);
+}
+img{
+    height: 200px;
+    margin: 10px auto;
+    border: 1px solid black;
+    aspect-ratio: ;
+}
+h1{
+    margin-top: 25px;
+    text-align: center;
+    font-size: 4em;
+    font-family: 'Indie Flower', cursive;
+}
