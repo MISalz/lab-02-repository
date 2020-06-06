@@ -15,21 +15,22 @@ function render(object){
   let $imgTemp = $('#imgTemp').clone();
 
   $($imgTemp).removeAttr(`id`);
-//   console.log('bro');
+  //   console.log('bro');
   $($imgTemp).addClass(object.keyword);
   $($imgTemp).append(`<header>${object.title}</header>`);
   $($imgTemp).append(`<img src="${object.image_url}"</img>`);
   $($imgTemp).append(`<p>${object.description}</p>`);
   $('#pictures').append($imgTemp);
-  
-  let $list = $('option').clone();
-  
-  $($list).append(`<option>${object.keyword}</option>`);
-    console.log('bro2');
-  $('select').append($list);
+
 
 }
+render.prototype.dropDown = function(object){
+  let $list = $('option').clone();
 
+  $($list).append(`<option>${object.keyword}</option>`);
+  console.log('bro2');
+  $('select').append($list);
+}
 
 // imgTemp.prototype.dropDown = function {
 
