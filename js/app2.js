@@ -1,5 +1,10 @@
 'use strict';
 // console.log('hey');
+let keywordArr = [];
+let $dropDown = $('.dropDown')
+
+$dropDown.on('change', filterHorns);
+
 
 $(document).ready(function(){
   $.ajax('/data/page-1.json').then(data => {
@@ -10,12 +15,10 @@ $(document).ready(function(){
   })
 });
 
-let keywordArr = [];
 function render(object){
   let $imgTemp = $('#imgTemp').clone();
 
-  $($imgTemp).removeAttr(`id`);
-  console.log('bro');
+
   $($imgTemp).addClass(object.keyword);
   $($imgTemp).append(`<header>${object.title}</header>`);
   $($imgTemp).append(`<img src="${object.image_url}"</img>`);
@@ -23,12 +26,31 @@ function render(object){
   $('#pictures').append($imgTemp);
 
   if ((keywordArr.includes(object.keyword) === false)){
-    keywordArr.push(object.keyword)
+    let $dropDown = $('#dropDown');
+
+    keywordArr.push(object.keyword);
+    $($dropDown).append(`<option value="${object.keyword}">${object.keyword}</option>`);
+
   }
 
-
 }
 
-forEach(keywordArr){
-  
+
+function filterHorns(){
+  let $keyword = $(this).val();
+  // if the value of option picked === the cards class... show the matching cards and hide all others.
+  if($keyword){
+    $('#pictures').hide();
+    $(`.${$keyword}`).fadeIn();
+  }
+  else{
+    $('#pictures').show();
+  }
+  console.log('hey')
 }
+
+
+
+
+
+
