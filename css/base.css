@@ -19,3 +19,8 @@ h1{
 div{
     border: 2px dotted green;
 }
+
+option{
+    text-align: center;
+}
+

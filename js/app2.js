@@ -28,6 +28,7 @@ function render(object){
   if ((keywordArr.includes(object.keyword) === false)){
     let $dropDown = $('#dropDown');
 
+
     keywordArr.push(object.keyword);
     $($dropDown).append(`<option value="${object.keyword}">${object.keyword}</option>`);
 
@@ -48,3 +49,4 @@ function filterHorns(){
   }
   console.log('hey')
 }
+
