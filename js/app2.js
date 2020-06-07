@@ -10,39 +10,25 @@ $(document).ready(function(){
   })
 });
 
-
+let keywordArr = [];
 function render(object){
   let $imgTemp = $('#imgTemp').clone();
 
   $($imgTemp).removeAttr(`id`);
-  //   console.log('bro');
+  console.log('bro');
   $($imgTemp).addClass(object.keyword);
   $($imgTemp).append(`<header>${object.title}</header>`);
   $($imgTemp).append(`<img src="${object.image_url}"</img>`);
   $($imgTemp).append(`<p>${object.description}</p>`);
   $('#pictures').append($imgTemp);
 
+  if ((keywordArr.includes(object.keyword) === false)){
+    keywordArr.push(object.keyword)
+  }
+
 
 }
-render.prototype.dropDown = function(object){
-  let $list = $('option').clone();
 
-  $($list).append(`<option>${object.keyword}</option>`);
-  console.log('bro2');
-  $('select').append($list);
+forEach(keywordArr){
+  
 }
-
-// imgTemp.prototype.dropDown = function {
-
-//     let $list = $('option').clone();
-//     let keyword = $(object).val();
-//     console.log('bro');
-//     $($list).text(object.keyword);
-//     console.log('bro2');
-//     $('select').append($list);
-// }
-
-// dropDown();
-
-
-

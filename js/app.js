@@ -17,11 +17,12 @@ $.ajax('/data/page-1.json').then(data => {
     let keyword = img_list[0][i].keyword;
     let title = img_list[0][i].title;
     let description = img_list[0][i].description;
-
-    $imgTemp.find('header').text(title).appendTo('.pictures');
-    $imgTemp.find('img').attr('src', url).removeClass('imgTemp').addClass(keyword).appendTo('.pictures');
-    $imgTemp.find('p').text(description).appendTo('.pictures');
-    // imgTemp.appendTo('.pictures');
+console.log('fuckthis');
+    $imgTemp.find('header').text(title);
+    $imgTemp.find('img').attr('src', url).addClass(keyword);
+    $imgTemp.find('p').text(description);
+    console.log('fuckthis2');
+    $('.imgTemp').append($imgTemp);
 
     newArrHorn.push(hornNum);
     newArrKey.push(keyword);
