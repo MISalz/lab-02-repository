@@ -1,9 +1,9 @@
 'use strict';
 // console.log('hey');
 let keywordArr = [];
-let $dropDown = $('.dropDown')
+let $dropDown = $('#dropDown')
 
-$dropDown.on('change', filterHorns);
+$dropDown.on('change', filter);
 
 
 $(document).ready(function(){
@@ -19,8 +19,8 @@ function render(object){
   let $imgTemp = $('#imgTemp').clone();
 
 
-  $($imgTemp).addClass(object.keyword);
-  $($imgTemp).append(`<header>${object.title}</header>`);
+  $($imgTemp).addClass(object.keyword).removeAttr('id', 'imgTemp');
+  $($imgTemp).append(`<h2>${object.title}</h2>`);
   $($imgTemp).append(`<img src="${object.image_url}"</img>`);
   $($imgTemp).append(`<p>${object.description}</p>`);
   $('#pictures').append($imgTemp);
@@ -31,22 +31,21 @@ function render(object){
 
     keywordArr.push(object.keyword);
     $($dropDown).append(`<option value="${object.keyword}">${object.keyword}</option>`);
-
   }
+
 
 }
 
 
-function filterHorns(){
-  let $keyword = $(this).val();
-  // if the value of option picked === the cards class... show the matching cards and hide all others.
-  if($keyword){
-    $('#pictures').hide();
-    $(`.${$keyword}`).fadeIn();
-  }
-  else{
-    $('#pictures').show();
-  }
-  console.log('hey')
-}
 
+/// if option value clicked === class of card
+/// hide all cards then...
+/// show all cards with the class of value clicked
+/// else show all cards
+
+function filter(){
+  let $value = $('option').val();
+
+  $('.card').hide();
+  $(`.${$value}`).fadeIn();
+}
