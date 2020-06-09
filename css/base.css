@@ -15,6 +15,7 @@ body{
 
 img{
     height: 50%;
+    border-radius: 15%;
     /* margin: auto; */
     
 }
@@ -45,7 +46,7 @@ h1{
 
 #pictures{
     margin: auto;
-    margin-top: 70px;
+    margin-top: 30px;
 
 }
 
@@ -58,11 +59,41 @@ h2{
     margin-top: 20px;
 }
 
-p{
+/* p{
     overflow: scroll;
     text-align: center;
-}
+} */
 
 #dropDown{
     margin: 0px 46%;
 }
+
+/* hover over img to make description appear */
+
+.hover{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 15%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgb(233, 232, 216);
+}
+
+.card:hover .hover{
+    opacity: 1;
+}
+
+.description{
+    color: rgb(3, 3, 3);
+    font-size: 1.3em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
