@@ -3,8 +3,7 @@
 let keywordArr = [];
 let $dropDown = $('#dropDown')
 
-$dropDown.on('change', filter);
-
+// $dropDown.on('change', word);
 
 $(document).ready(function(){
   $.ajax('/data/page-1.json').then(data => {
@@ -22,8 +21,9 @@ function render(object){
   $($imgTemp).addClass(object.keyword).removeAttr('id', 'imgTemp');
   $($imgTemp).append(`<h2>${object.title}</h2>`);
   $($imgTemp).append(`<img src="${object.image_url}"</img>`);
-  $($imgTemp).append(`<p>${object.description}</p>`);
+  $($imgTemp).append(`<div class="hover"><p class="description">${object.description}</p></div>`);
   $('#pictures').append($imgTemp);
+
 
   if ((keywordArr.includes(object.keyword) === false)){
     let $dropDown = $('#dropDown');
@@ -31,6 +31,7 @@ function render(object){
 
     keywordArr.push(object.keyword);
     $($dropDown).append(`<option value="${object.keyword}">${object.keyword}</option>`);
+
   }
 
 
@@ -38,14 +39,23 @@ function render(object){
 
 
 
+
+
 /// if option value clicked === class of card
 /// hide all cards then...
 /// show all cards with the class of value clicked
 /// else show all cards
+// function filter(){
+//   let $value = $('option').val();
+//   console.log('hey', $value);
+//   console.log(`.${$value}`);
 
-function filter(){
-  let $value = $('option').val();
+//   let $card = $(`.${$value}`);
+//   console.log($card);
 
-  $('.card').hide();
-  $(`.${$value}`).fadeIn();
-}
+//   if($value !== 'rhino'){
+//     // $('.card').hide();
+//     $('div').filter('.rhino').hide();
+//   }
+// }
+
