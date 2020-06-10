@@ -14,7 +14,7 @@ body{
 }
 
 img{
-    height: 50%;
+    height: 70%;
     border-radius: 15%;
     /* margin: auto; */
     
@@ -40,7 +40,7 @@ h1{
     float: left;
     margin-right: 15px;
     margin: auto;
-    overflow: hidden;
+    overflow: scroll;
 
 }
 
@@ -76,7 +76,7 @@ h2{
     bottom: 0;
     left: 0;
     right: 0;
-    height: 15%;
+    height: 13%;
     width: 100%;
     opacity: 0;
     transition: .5s ease;
