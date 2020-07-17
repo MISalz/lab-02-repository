@@ -1,36 +1,36 @@
-'use strict';
+// 'use strict';
 
-let img_list = [];
-let i = 0;
-let newArrHorn = [];
-let newArrKey = [];
+// let img_list = [];
+// let i = 0;
+// let newArrHorn = [];
+// let newArrKey = [];
 
 
-$.ajax('/data/page-1.json').then(data => {
-  ////gets array of images
-  img_list.push(data);
+// $.ajax('/data/page-1.json').then(data => {
+//   ////gets array of images
+//   img_list.push(data);
 
-  data.forEach(() => {
-    let $imgTemp = $('.imgTemp').clone();
-    let url = img_list[0][i].image_url;
-    let hornNum = img_list[0][i].horns;
-    let keyword = img_list[0][i].keyword;
-    let title = img_list[0][i].title;
-    let description = img_list[0][i].description;
+//   data.forEach(() => {
+//     let $imgTemp = $('.imgTemp').clone();
+//     let url = img_list[0][i].image_url;
+//     let hornNum = img_list[0][i].horns;
+//     let keyword = img_list[0][i].keyword;
+//     let title = img_list[0][i].title;
+//     let description = img_list[0][i].description;
 
-    $imgTemp.find('header').text(title);
-    $imgTemp.find('img').attr('src', url).addClass(keyword);
-    $imgTemp.find('p').text(description);
+//     $imgTemp.find('header').text(title);
+//     $imgTemp.find('img').attr('src', url).addClass(keyword);
+//     $imgTemp.find('p').text(description);
 
-    $('.imgTemp').append($imgTemp);
+//     $('.imgTemp').append($imgTemp);
 
-    newArrHorn.push(hornNum);
-    newArrKey.push(keyword);
+//     newArrHorn.push(hornNum);
+//     newArrKey.push(keyword);
 
-    i++;
-  });
-  console.log('done');
-});
+//     i++;
+//   });
+//   console.log('done');
+// });
 
 
 

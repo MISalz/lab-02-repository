@@ -1,0 +1,17 @@
+
+.hover{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 13%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgb(233, 232, 216);
+}
+
+.card:hover .hover{
+    opacity: 1;
+}
